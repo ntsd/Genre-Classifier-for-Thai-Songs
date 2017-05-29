@@ -10,7 +10,7 @@ def grabSongsDetailFromPage(url):
     page = requests.get(url)
     tree = html.fromstring(page.content)
     textContacts = tree.xpath('//div[@class="textcontact-music"]')
-    songs = []
+    songs = [Song("title", "artist", "album", "record", "category", "genre")]
     for detail in textContacts:
         title, artist, album, record, category, genre = "", "", "", "", "", ""
         for a in detail:
