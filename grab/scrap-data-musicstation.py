@@ -15,7 +15,7 @@ def grabSongsDetailFromPage(url):
         title, artist, album, record, category, genre = "", "", "", "", "", ""
         for a in detail:
             href = a.get("href")
-            if href is not None and ".html" in href and a.text in ["ลูกทุ่ง"]:
+            if href is not None and ".html" in href:
                 if "artist" in href:
                     artist = a.text
                 elif "album" in href:
